@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/19 01:02:45 by gquerre           #+#    #+#             */
-/*   Updated: 2018/04/27 06:14:38 by gquerre          ###   ########.fr       */
+/*   Updated: 2018/08/25 11:25:04 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int		ft_init_process(t_env *e)
 {
 	t_process	*tmp;
 	int			i;
-	int			k;
 
 	i = 0;
 	tmp = NULL;

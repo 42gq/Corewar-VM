@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 03:41:03 by gquerre           #+#    #+#             */
-/*   Updated: 2018/04/27 00:39:24 by gquerre          ###   ########.fr       */
+/*   Updated: 2018/08/25 18:00:13 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		ft_fill_arena(t_env *e)
 	box(e->vi->arena, 0, 0);
 	while (j < e->vi->my - 1 && cmp < MEM_SIZE)
 	{
-		while (i < e->vi->mx - 2 && cmp < MEM_SIZE)
+		while (i < (e->vi->mx / 6) * 5 - 2 && cmp < MEM_SIZE)
 		{
 			wmove(e->vi->arena, j, i);
 			wprintw(e->vi->arena, " ");

@@ -6,7 +6,7 @@
 #    By: fdidelot <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/07 22:22:27 by fdidelot          #+#    #+#              #
-#    Updated: 2018/05/02 04:06:38 by fdidelot         ###   ########.fr        #
+#    Updated: 2018/08/25 11:45:56 by gquerre          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -38,7 +38,7 @@ SRCPATH = 	./srcs/
 
 INCPATH =	./includes/
 
-FLAGS = 	-Wall -Wextra -Werror
+CFLAGS = 	-Wall -Wextra -Werror -g -fsanitize=address
 
 all : 		$(NAME)
 
@@ -51,12 +51,12 @@ $(NAME) :	$(addprefix $(SRCPATH), $(SRCS))
 			@rm $(OBJS)
 
 clean :
-			@make -C libft clean
-			@rm -rf $(OBJS)
+			rm -rf $(OBJS)
+			make clean -C libft
 
 fclean :	clean
-			@make -C libft fclean
 			@rm -rf $(NAME)
+			@make fclean -C libft
 
 re : fclean all
 

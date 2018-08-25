@@ -6,7 +6,7 @@
 /*   By: snedir <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 05:15:24 by snedir            #+#    #+#             */
-/*   Updated: 2018/04/26 07:05:43 by gquerre          ###   ########.fr       */
+/*   Updated: 2018/08/25 12:02:21 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,14 @@ unsigned int	bin_to_dec(int size, unsigned char *number,
 		unsigned int array_size)
 {
 	unsigned int	result;
-	int				i;
+	unsigned int	i;
 
 	i = 0;
 	result = 0;
 	while (i < array_size)
 	{
 		if (number[i] == '1')
-			result += pow(2, ((size * 8) - i) - 1);
+			result += ft_pow(2, ((size * 8) - i) - 1);
 		i++;
 	}
 	return (result);

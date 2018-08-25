@@ -6,13 +6,13 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 02:07:51 by gquerre           #+#    #+#             */
-/*   Updated: 2018/04/26 07:08:04 by gquerre          ###   ########.fr       */
+/*   Updated: 2018/08/25 12:34:26 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/corewar_vm.h"
 
-void			write_4_bytes(t_env *e, int input, t_process *pc,
+void			write_4_bytes(t_env *e, unsigned int input, t_process *pc,
 		unsigned int off)
 {
 	unsigned int	i;

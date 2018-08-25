@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 05:54:02 by gquerre           #+#    #+#             */
-/*   Updated: 2018/05/02 06:47:47 by snedir           ###   ########.fr       */
+/*   Updated: 2018/08/25 12:33:08 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ typedef struct					s_player
 	unsigned int				lives_periode;
 	unsigned int				total_lives;
 	unsigned int				last_live;
-	unsigned int				very_last_flag;
+	int							very_last_flag;
 	char						*name;
 	char						*comment;
 	int							size;
@@ -146,7 +146,7 @@ typedef struct					s_env
 	int							checks_done;
 	unsigned int				lives_periode;
 	char						*winner_name;
-	int							winner_value;
+	unsigned int				winner_value;
 	int							winner_num_player;
 	int							option;
 	int							dump_on;
@@ -191,9 +191,7 @@ int								ft_dump(t_env *e);
 int								ft_add_pc(t_env *e, t_process *father, short i);
 int								read_nb_bytes(t_env *e, int arg_size,
 								t_process *pc, int offset);
-void							write_2_bytes(t_env *e, unsigned short input,
-								t_process *pc, unsigned int offset);
-void							write_4_bytes(t_env *e, int input,
+void							write_4_bytes(t_env *e, unsigned int input,
 								t_process *pc, unsigned int offset);
 void							fonction_lancement_op(t_env *e, t_process *pc);
 int								ft_operations(t_env *e, t_process *process);
