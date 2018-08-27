@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 00:18:51 by gquerre           #+#    #+#             */
-/*   Updated: 2018/08/25 19:33:39 by gquerre          ###   ########.fr       */
+/*   Updated: 2018/08/27 14:27:27 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,10 @@ int		ft_visual(t_env *e)
 	e->vi->my = (e->vi->root) + 2;
 	initscr();
 	getmaxyx(stdscr, e->vi->win_height, e->vi->win_width);
-	if (e->vi->my < e->vi->win_height && e->vi->mx + 52 < e->vi->win_width)
-	{
-		e->vi->arena = newwin(e->vi->my, e->vi->mx, 0, 0);
-		e->vi->info = newwin(e->vi->my, 50, 0, e->vi->mx + 2);
+	if (e->vi->my < e->vi->win_height && e->vi->mx + 52 < e->vi->win_width &&
+			(e->vi->arena = newwin(e->vi->my, e->vi->mx, 0, 0)) != NULL &&
+			(e->vi->info = newwin(e->vi->my, 50, 0, e->vi->mx + 2)) != NULL)
 		return (1);
-	}
 	ft_putstr("The screen is too small for the window\n");
 	return (0);
 }
