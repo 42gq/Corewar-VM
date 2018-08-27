@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 19:35:19 by gquerre           #+#    #+#             */
-/*   Updated: 2018/05/03 07:33:04 by gquerre          ###   ########.fr       */
+/*   Updated: 2018/08/27 14:39:41 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdlib.h>
 # include "./files.h/get_next_line.h"
 
+int					ft_sqrt(int nb);
 void				ft_perror(char *s);
 char				*ft_strjoinfree_both(char *s1, char *s2);
 unsigned int		ft_atou(char *str);

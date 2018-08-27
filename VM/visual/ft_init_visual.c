@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 00:18:51 by gquerre           #+#    #+#             */
-/*   Updated: 2018/08/27 14:27:27 by gquerre          ###   ########.fr       */
+/*   Updated: 2018/08/27 15:19:32 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,11 @@ void	ft_init_visual(t_env *e)
 
 int		ft_visual(t_env *e)
 {
-	int	test;
-
 	if (!(e->vi = ft_memalloc(sizeof(t_visu))))
 		return (0);
 	ft_init_visual(e);
-	e->vi->root = sqrt(MEM_SIZE);
-	test = MEM_SIZE % e->vi->root;
-	if (test != 0 || e->vi->root < (e->nb_of_pl * 10))
+	e->vi->root = ft_sqrt(MEM_SIZE);
+	if (MEM_SIZE % e->vi->root != 0 || e->vi->root < (e->nb_of_pl * 10))
 		return (0);
 	e->visu = 1;
 	e->vi->border = 3;
