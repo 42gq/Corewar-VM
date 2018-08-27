@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/19 01:20:17 by gquerre           #+#    #+#             */
-/*   Updated: 2018/08/27 18:08:42 by gquerre          ###   ########.fr       */
+/*   Updated: 2018/08/27 18:17:53 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	main_two(t_env *e)
 	if (e->visu == 1)
 		if (ft_start_the_game_visu(e) == 0)
 			e->visu = 2;
-	if ((game = ft_game_runner(e)) != 1)
+	if ((game = ft_game_runner(e)) < 1)
 		return (ft_error(e, game == 0 ? 6 : 10));
 	if (ft_finish(e, 1) == 0)
 		return (ft_error(e, 7));
