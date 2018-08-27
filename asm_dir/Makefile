@@ -6,7 +6,7 @@
 #    By: fdidelot <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/07 22:22:27 by fdidelot          #+#    #+#              #
-#    Updated: 2018/08/25 11:45:56 by gquerre          ###   ########.fr        #
+#    Updated: 2018/08/27 14:16:14 by gquerre          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -38,7 +38,8 @@ SRCPATH = 	./srcs/
 
 INCPATH =	./includes/
 
-CFLAGS = 	-Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS = 	-Wall -Wextra -Werror -g -fsanitize=address,undefined -pedantic
+FLAGS = 	-Wall -Wextra -Werror -g -fsanitize=address,undefined -pedantic
 
 all : 		$(NAME)
 
@@ -46,7 +47,7 @@ $(NAME) :	$(addprefix $(SRCPATH), $(SRCS))
 			@gcc $(FLAGS) -c $(addprefix $(SRCPATH), $(SRCS)) -I $(INCPATH)
 			@make -C libft
 			@printf "\033[0;34m> Compiling asm\033[0m"
-			@gcc $(FLAGS) $(OBJS) libft/libft.a -o $(NAME)
+			@gcc $(FLAGS) $(OBJS) libft/libft.a -o $(NAME) -fsanitize=address,undefined
 			@printf "\033[0;32m OK\n\033[0m"
 			@rm $(OBJS)
 

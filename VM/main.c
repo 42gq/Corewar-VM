@@ -6,12 +6,12 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/19 01:20:17 by gquerre           #+#    #+#             */
-/*   Updated: 2018/08/25 14:17:30 by gquerre          ###   ########.fr       */
+/*   Updated: 2018/08/27 14:16:48 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/corewar_vm.h"
-int	main_two(t_env *e);
+
 t_op_info	g_op_tab[17] =
 {
 	{live, "live", 1, {T_DIR}, 1, 10, "alive", 0, 0},
