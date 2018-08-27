@@ -6,7 +6,7 @@
 #    By: gquerre <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/24 05:47:01 by gquerre           #+#    #+#              #
-#    Updated: 2018/08/25 14:19:31 by gquerre          ###   ########.fr        #
+#    Updated: 2018/08/25 19:17:24 by gquerre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,7 @@ ARG_SRC =	./get_args/converter.c\
 			./get_args/ft_arg_neg_three.c
 
 CFLAGS =	 -Wextra -Wall -Werror -g -fsanitize=address,undefined -pedantic
+FLAG =	 -Wextra -Wall -Werror -g -fsanitize=address,undefined -pedantic
 
 SUPP =	./includes/corewar_vm.h ./SRC/libft/libft.a -lncurses 
 
@@ -71,7 +72,7 @@ OBJ =	$(SRC:.c=.o) $(V_SRC:.c=.o) $(OP_SRC:.c=.o) $(ARG_SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): SRC/libft/libft.a $(OBJ)
-	gcc $(CFLAGS) -I $(SUPP) $(OBJ) -o $(NAME) -fsanitize=address,undefined
+	gcc $(FLAG) -I $(SUPP) $(OBJ) -o $(NAME) -fsanitize=address,undefined
 
 SRC/libft/libft.a:
 	make -C SRC/libft

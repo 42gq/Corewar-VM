@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 00:18:51 by gquerre           #+#    #+#             */
-/*   Updated: 2018/08/25 18:00:06 by gquerre          ###   ########.fr       */
+/*   Updated: 2018/08/25 19:33:39 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	ft_init_visual(t_env *e)
 	e->vi->my = 0;
 	e->vi->color = 0;
 	e->vi->speed = 0;
+	e->vi->win_height = 0;
+	e->vi->win_width = 0;
 }
 
 int		ft_visual(t_env *e)
@@ -38,18 +40,13 @@ int		ft_visual(t_env *e)
 	e->vi->mx = (3 * e->vi->root) + e->vi->border;
 	e->vi->my = (e->vi->root) + 2;
 	initscr();
-	getmaxyx(stdscr, e->vi->my, e->vi->mx);
-	if (e->vi->my >= e->vi->root + 2 && e->vi->mx >= 3 * e->vi->root + e->vi->border)
+	getmaxyx(stdscr, e->vi->win_height, e->vi->win_width);
+	if (e->vi->my < e->vi->win_height && e->vi->mx + 52 < e->vi->win_width)
 	{
-	//e->vi->arena = newwin(e->vi->my, e->vi->mx, 0, 0);
-	//e->vi->info = newwin(e->vi->my, 50, 0, e->vi->mx + 2);
-	e->vi->arena = newwin(e->vi->my - 1, (e->vi->mx / 6) * 5  , 1, 0);
-	//e->vi->info = newwin(e->vi->my - 1, (e->vi->mx / 4) * 3 - 2, 1, (e->vi->mx / 3) * 2 + 2);
+		e->vi->arena = newwin(e->vi->my, e->vi->mx, 0, 0);
+		e->vi->info = newwin(e->vi->my, 50, 0, e->vi->mx + 2);
+		return (1);
 	}
-	else
-	{
-		ft_putstr("The screen is too small for the window\n");
-		return (0);
-	}
-	return (1);
+	ft_putstr("The screen is too small for the window\n");
+	return (0);
 }

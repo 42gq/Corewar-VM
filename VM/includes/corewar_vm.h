@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 05:54:02 by gquerre           #+#    #+#             */
-/*   Updated: 2018/08/25 12:33:08 by gquerre          ###   ########.fr       */
+/*   Updated: 2018/08/25 19:26:37 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,8 @@ typedef struct					s_visu
 	WINDOW						*info;
 	int							color;
 	int							speed;
+	int							win_height;
+	int							win_width;
 }								t_visu;
 
 /*

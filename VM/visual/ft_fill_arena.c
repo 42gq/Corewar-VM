@@ -6,18 +6,9 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 03:41:03 by gquerre           #+#    #+#             */
-/*   Updated: 2018/08/25 18:00:13 by gquerre          ###   ########.fr       */
+/*   Updated: 2018/08/25 19:20:17 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#define KNRM  "\x1B[0m"
-#define KRED  "\x1B[31m"
-#define KGRN  "\x1B[32m"
-#define KYEL  "\x1B[33m"
-#define KBLU  "\x1B[34m"
-#define KMAG  "\x1B[35m"
-#define KCYN  "\x1B[36m"
-#define KWHT  "\x1B[37m"
 
 #include "../includes/corewar_vm.h"
 
@@ -57,7 +48,7 @@ int		ft_fill_arena(t_env *e)
 	box(e->vi->arena, 0, 0);
 	while (j < e->vi->my - 1 && cmp < MEM_SIZE)
 	{
-		while (i < (e->vi->mx / 6) * 5 - 2 && cmp < MEM_SIZE)
+		while (i < (e->vi->mx - 2) && cmp < MEM_SIZE)
 		{
 			wmove(e->vi->arena, j, i);
 			wprintw(e->vi->arena, " ");
