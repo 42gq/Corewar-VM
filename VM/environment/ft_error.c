@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/19 05:46:54 by gquerre           #+#    #+#             */
-/*   Updated: 2018/04/28 07:18:26 by gquerre          ###   ########.fr       */
+/*   Updated: 2018/08/27 18:07:56 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ int	ft_error(t_env *e, int i)
 		ft_putstr("Error.\nWrong options, try again\n");
 	else if (i == 9)
 		ft_putstr("Error.\nwat the else\n");
+	else if (i == 10)
+		ft_putstr("The window is now too small. Exit Game");
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 00:18:51 by gquerre           #+#    #+#             */
-/*   Updated: 2018/08/27 15:19:32 by gquerre          ###   ########.fr       */
+/*   Updated: 2018/08/27 17:55:22 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int		ft_visual(t_env *e)
 			(e->vi->info = newwin(e->vi->my, 50, 0, e->vi->mx + 2)) != NULL)
 		return (1);
 	ft_putstr("The screen is too small for the window\n");
+	e->visu = 2;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/22 01:34:47 by gquerre           #+#    #+#             */
-/*   Updated: 2018/05/03 07:18:32 by gquerre          ###   ########.fr       */
+/*   Updated: 2018/08/27 18:02:41 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,14 +122,13 @@ int		ft_game_runner(t_env *e)
 	a = 0;
 	while (e->pc_list)
 	{
-		while (e->pc_list && e->cycles_periode < e->cycles_to_die &&
-				ft_keypad(e, unix_text_kbhit()))
+		while (e->pc_list && e->cycles_periode < e->cycles_to_die)
 		{
 			if (ft_play_turn(e) == 0)
 				return (0);
 			if (e->visu == 1)
-				if (ft_maj_visu(e) == 0)
-					return (0);
+				if (ft_maj_visu(e) == 0 || ft_keypad(e, unix_text_kbhit()) == 0)
+					return (-1);
 			if (e->visu == 1)
 				usleep(FREQ + e->vi->speed);
 			if (e->cycles == e->dump_on)

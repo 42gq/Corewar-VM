@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/19 01:20:17 by gquerre           #+#    #+#             */
-/*   Updated: 2018/08/27 14:16:48 by gquerre          ###   ########.fr       */
+/*   Updated: 2018/08/27 18:08:42 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ t_op_info	g_op_tab[17] =
 
 int	main_two(t_env *e)
 {
+	int		game;
+
+	game = 0;
 	if (e->forced_nb_for_pl)
 		return (ft_error(e, 8));
 	if (e->option > 0 || e->forced_nb_for_pl > 0)
@@ -50,8 +53,8 @@ int	main_two(t_env *e)
 	if (e->visu == 1)
 		if (ft_start_the_game_visu(e) == 0)
 			e->visu = 2;
-	if (ft_game_runner(e) == 0)
-		return (ft_error(e, 6));
+	if ((game = ft_game_runner(e)) != 1)
+		return (ft_error(e, game == 0 ? 6 : 10));
 	if (ft_finish(e, 1) == 0)
 		return (ft_error(e, 7));
 	return (0);
